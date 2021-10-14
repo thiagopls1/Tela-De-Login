@@ -1,0 +1,13 @@
+<resources>
+
+    <string name="edit_text_login">Nome de usuário</string>
+    <string name="edit_text_password">Senha</string>
+    <string name="edit_text_confirm_password">Confirmar Senha</string>
+    <string name="edit_text_email">E-Mail</string>
+    <string name="button_login">Entrar</string>
+    <string name="button_signup">Cadastro</string>
+    <string name="button_confirm">Confirmar</string>
+    <string name="button_return">Voltar</string>
+    <string name="app_name">Login Screen</string>
+
+</resources>
