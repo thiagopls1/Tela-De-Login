@@ -8,9 +8,15 @@
     <color name="teal_500">#00BCD4</color>
     <color name="teal_700">#FF018786</color>
 
+    <color name="blue_200">#90CAF9</color>
+    <color name="blue_500">#2196F3</color>
+    <color name="blue_700">#1976D2</color>
+
+    <color name="dark_blue">#001C3A</color>
+    <color name="light_blue">#8BC3ED</color>
+
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <color name="dark_blue">#001C3A</color>
     <color name="bright_pink">#FF00DD</color>
 </resources>
