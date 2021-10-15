@@ -1,7 +1,6 @@
 package com.example.loginscreen
 
 import androidx.room.Dao
-import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 
@@ -19,6 +18,9 @@ interface UserDao {
 
     @Query("SELECT email FROM User")
     fun getAllEmails(): List<String>
+
+    @Query("SELECT * FROM User WHERE username IN (:username) AND password IN (:password)")
+    fun authUser(username: String, password: String): Boolean
 
     @Insert
     fun insertAll(vararg user: User)

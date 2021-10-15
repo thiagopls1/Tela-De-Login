@@ -19,7 +19,7 @@ class RegisterActivity : AppCompatActivity() {
 
         val db = Room.databaseBuilder(
             applicationContext,
-            AppDatabase::class.java, "app-database"
+            AppDatabase::class.java,"app-database"
         ).allowMainThreadQueries().build()
 
         binding.buttonConfirm.setOnClickListener {
@@ -34,33 +34,34 @@ class RegisterActivity : AppCompatActivity() {
 
             if( username == "" || email == "" || password == "" || confirmPassword == "" ){
                 showMessage("Preencha os campos corretamente!")
-            }
-            if (users.contains(username)){
-                showMessage("Nome de usuário já existente")
-            }else {
-                if (emails.contains(email)) {
-                    showMessage("Email já existente")
+            } else {
+                if (users.contains(username)) {
+                    showMessage("Nome de usuário já existente")
                 } else {
-                    if (password == confirmPassword) {
-                        try {
-                            db.userDao().insertAll(
-                                User(
-                                    userId = 0,
-                                    username = username,
-                                    email = email,
-                                    password = password
-                                )
-                            )
-                            showMessage("Dados cadastrados com sucesso")
-                        } catch (e: Exception) {
-                            showMessage(e.toString())
-                        }
-                        binding.textUsername.setText("")
-                        binding.textEmail.setText("")
-                        binding.textPassword.setText("")
-                        binding.textConfirmPassword.setText("")
+                    if (emails.contains(email)) {
+                        showMessage("Email já existente")
                     } else {
-                        showMessage("Os campos 'senha' e 'confirmar senha' não coincidem")
+                        if (password == confirmPassword) {
+                            try {
+                                db.userDao().insertAll(
+                                    User(
+                                        userId = 0,
+                                        username = username,
+                                        email = email,
+                                        password = password
+                                    )
+                                )
+                                showMessage("Dados cadastrados com sucesso")
+                            } catch (e: Exception) {
+                                showMessage(e.toString())
+                            }
+                            binding.textUsername.setText("")
+                            binding.textEmail.setText("")
+                            binding.textPassword.setText("")
+                            binding.textConfirmPassword.setText("")
+                        } else {
+                            showMessage("Os campos 'senha' e 'confirmar senha' não coincidem")
+                        }
                     }
                 }
             }
