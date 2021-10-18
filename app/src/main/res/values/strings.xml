@@ -9,5 +9,7 @@
     <string name="button_confirm">Confirmar</string>
     <string name="button_return">Voltar</string>
     <string name="app_name">Login Screen</string>
+    <string name="logout">Sair</string>
+    <string name="authenticated_user_message">Login Efetuado com sucesso!</string>
 
 </resources>

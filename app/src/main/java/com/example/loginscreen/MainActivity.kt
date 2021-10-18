@@ -7,6 +7,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.room.Room
 import com.example.loginscreen.databinding.ActivityMainBinding
 
+
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
@@ -29,9 +30,9 @@ class MainActivity : AppCompatActivity() {
             val userAuthenticated = db.userDao().authUser(usernameInput, passwordInput)
 
             if(!userAuthenticated){
-                showMessage("Nome de Usuário ou Senha inválidos!")
+                showMessage("Nome de Usuário ou Senha inválidos")
             } else{
-                showMessage("Login efetuado")
+                startActivity(Intent(this, UserAuthenticatedActivity::class.java))
             }
         }
 
